@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/sboot_common/sboot_common.iml" filepath="$PROJECT_DIR$/sboot_common/sboot_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sboot_demo02.iml" filepath="$PROJECT_DIR$/.idea/sboot_demo02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sboot_mode/sboot_mode.iml" filepath="$PROJECT_DIR$/sboot_mode/sboot_mode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sboot_parent/sboot_parent.iml" filepath="$PROJECT_DIR$/sboot_parent/sboot_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sboot_service_api/sboot_service_api.iml" filepath="$PROJECT_DIR$/sboot_service_api/sboot_service_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sboot_service_dishes/sboot_service_dishes.iml" filepath="$PROJECT_DIR$/sboot_service_dishes/sboot_service_dishes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sboot_service_teach/sboot_service_teach.iml" filepath="$PROJECT_DIR$/sboot_service_teach/sboot_service_teach.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sboot_service_user/sboot_service_user.iml" filepath="$PROJECT_DIR$/sboot_service_user/sboot_service_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sboot_utils/sboot_utils.iml" filepath="$PROJECT_DIR$/sboot_utils/sboot_utils.iml" />
+    </modules>
+  </component>
+</project>

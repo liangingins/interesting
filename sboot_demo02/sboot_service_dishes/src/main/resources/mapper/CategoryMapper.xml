@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wenliang.demo.dishes.mapper.CategoryMapper">
+
+    <sql id="category_list" >
+        select * from category
+    </sql>
+    <!--这是自定义返回类型，用于表中字段与实体类属性不相符合时-->
+    <resultMap id="baseResultMap" type="com.wenliang.demo.entity.dishes.Category">
+        <result column="id" property="id" javaType="int"/>
+        <result column="name" property="name" javaType="String"/>
+        <result column="description" property="description" javaType="String"/>
+    </resultMap>
+    <insert id="addCategory" useGeneratedKeys="true" keyProperty="category.id" parameterType="com.wenliang.demo.entity.dishes.Category">
+        insert into category(name,description) values
+        (#{name},#{description})
+    </insert>
+    <!--在传递多个参数时 可以不用写添加@paramterType注解，也可以自行封装参数-->
+    <update id="updateCategory" parameterType="com.wenliang.demo.entity.dishes.Category">
+        update category set name = #{name} ,description = #{description}
+        where id = #{category.id}
+    </update>
+    <delete id="deleteOne" parameterType="int">
+        delete from category where id = #{id}
+    </delete>
+    <select id="findCategorys"  resultType="com.wenliang.demo.entity.dishes.Category">
+        select * from category
+    </select>
+    <select id="findById" parameterType="int" resultType="com.wenliang.demo.entity.dishes.Category">
+        select * from category where id = #{id}
+    </select>
+    <select id="findCategoryPages" parameterType="java.util.Map" resultType="com.wenliang.demo.entity.dishes.Category">
+        select * from category where 1 = 1
+            <if test="_parameter.containsKey('name')">
+                and name like concat(concat('%',#{name},'%'))
+            </if>
+            <if test="_parameter.containsKey('description')">
+                and description like concat(concat('%',#{description},'%'))
+            </if>
+    </select>
+    <select id="findCategoryByCondition" parameterType="com.wenliang.demo.entity.dishes.request.CategoryRequest" resultType="com.wenliang.demo.entity.dishes.Category">
+        select * from category where 1 = 1
+        <if test="name != null and name != '' ">
+            and name like concat(concat('%',#{name},'%'))
+        </if>
+
+        <if test="description != null and description != '' ">
+            and name like concat(concat('%',#{description},'%'))
+        </if>
+    </select>
+
+</mapper>
